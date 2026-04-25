@@ -1,12 +1,10 @@
-<<<<<<< HEAD
 # 👋 你好，我是董翔
 软件专业在读大学生 | 前端爱好者 | 开源创作者 | 技术内容分享者
 
 ---
 
-### 🔗 我的个人网站（正在建设中）
-> 等我们把它弄好，这里就可以放你的独立网站链接啦
-<!-- - [dxiangwiki.github.io](https://dxiangwiki.github.io) -->
+### 🔗 我的个人网站
+[dxiangwiki.github.io](https://dxiangwiki.github.io)
 
 ### 📚 我的技术平台
 - 🌐 CSDN 博客：[dxiang.blog.csdn.net](https://dxiang.blog.csdn.net)
@@ -27,21 +25,3 @@
 <p align="center">
   <img src="https://readme-stats-git-masterrstaa-rickstaa.vercel.app/api?username=dxiangwiki&show_icons=true&theme=radical" alt="董翔的GitHub Stats">
 </p>
-=======
-## Hi there 👋
-
-<!--
-**dxiangwiki/dxiangwiki** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
-
-Here are some ideas to get you started:
-
-- 🔭 I’m currently working on ...
-- 🌱 I’m currently learning ...
-- 👯 I’m looking to collaborate on ...
-- 🤔 I’m looking for help with ...
-- 💬 Ask me about ...
-- 📫 How to reach me: ...
-- 😄 Pronouns: ...
-- ⚡ Fun fact: ...
--->
-
