@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>董翔 | 软件专业开发者</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css" />
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            primary: '#165DFF',
+            dark: '#1E293B'
+          }
+        }
+      }
+    }
+  </script>
+  <style type="text/tailwindcss">
+    @layer utilities {
+      .text-shadow { text-shadow: 0 2px 4px rgba(0,0,0,0.1); }
+      .card-hover { @apply transition-all duration-300 hover:shadow-lg hover:-translate-y-1; }
+    }
+  </style>
+</head>
+
+<body class="bg-slate-50 text-slate-700">
+  <nav class="sticky top-0 bg-white/90 backdrop-blur shadow-sm z-10">
+    <div class="max-w-5xl mx-auto px-4 py-3 flex justify-between items-center">
+      <a href="#" class="text-xl font-bold text-primary">董翔</a>
+      <div class="flex gap-6">
+        <a href="#about" class="hover:text-primary">关于</a>
+        <a href="#skills" class="hover:text-primary">技能</a>
+        <a href="#projects" class="hover:text-primary">项目</a>
+        <a href="#contact" class="hover:text-primary">联系</a>
+      </div>
+    </div>
+  </nav>
+
+  <header class="bg-gradient-to-r from-primary to-indigo-600 text-white py-20 text-center">
+    <h1 class="text-4xl md:text-5xl font-bold mb-3 text-shadow">Hi, 我是 董翔</h1>
+    <p class="text-lg opacity-90 max-w-xl mx-auto px-3">
+      软件专业在读大学生 · 前端爱好者 · 开源创作者 · 技术内容分享者
+    </p>
+    <div class="mt-8 flex justify-center gap-5 text-2xl">
+      <a href="https://github.com/dxiangwiki" target="_blank" class="hover:text-slate-200"><i class="fa fa-github"></i></a>
+      <a href="https://dxiang.blog.csdn.net" target="_blank" class="hover:text-slate-200"><i class="fa fa-book"></i></a>
+      <a href="https://www.npmjs.com/~dongxiang678" target="_blank" class="hover:text-slate-200"><i class="fa fa-cube"></i></a>
+      <a href="mailto:3631247406@qq.com" class="hover:text-slate-200"><i class="fa fa-envelope"></i></a>
+    </div>
+  </header>
+
+  <section id="about" class="max-w-5xl mx-auto px-4 py-16">
+    <h2 class="text-2xl font-bold text-center mb-8 text-dark">关于我</h2>
+    <div class="bg-white p-8 rounded-xl shadow-sm">
+      <p class="mb-3 leading-relaxed">00后软件专业在读大学生，专注前端开发、工具库开发与开源分享。</p>
+      <p class="mb-3 leading-relaxed">喜欢造轮子、写Npm包、做实用工具、输出技术博客。</p>
+      <p class="leading-relaxed">持续学习，持续创作，稳步前行。</p>
+    </div>
+  </section>
+
+  <section id="skills" class="max-w-5xl mx-auto px-4 py-16 bg-white rounded-xl">
+    <h2 class="text-2xl font-bold text-center mb-8 text-dark">技术栈</h2>
+    <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4">
+      <div class="bg-slate-100 py-3 rounded-lg text-center">HTML / CSS</div>
+      <div class="bg-slate-100 py-3 rounded-lg text-center">JavaScript</div>
+      <div class="bg-slate-100 py-3 rounded-lg text-center">Vue</div>
+      <div class="bg-slate-100 py-3 rounded-lg text-center">Tailwind CSS</div>
+      <div class="bg-slate-100 py-3 rounded-lg text-center">Java</div>
+      <div class="bg-slate-100 py-3 rounded-lg text-center">Python</div>
+      <div class="bg-slate-100 py-3 rounded-lg text-center">Git / Github</div>
+      <div class="bg-slate-100 py-3 rounded-lg text-center">Npm 包开发</div>
+    </div>
+  </section>
+
+  <section id="projects" class="max-w-5xl mx-auto px-4 py-16">
+    <h2 class="text-2xl font-bold text-center mb-8 text-dark">我的开源项目</h2>
+    <div class="grid md:grid-cols-2 gap-6">
+
+      <div class="bg-white p-6 rounded-xl shadow-sm card-hover">
+        <h3 class="font-bold text-lg mb-2 text-dark">xiangjsoncraft</h3>
+        <p class="text-slate-500 mb-4">轻量级 JSON 处理工具库</p>
+        <a href="https://github.com/dxiangwiki/xiangjsoncraft" target="_blank" class="text-primary font-medium">查看源码 →</a>
+      </div>
+
+      <div class="bg-white p-6 rounded-xl shadow-sm card-hover">
+        <h3 class="font-bold text-lg mb-2 text-dark">virtual_excel_functions</h3>
+        <p class="text-slate-500 mb-4">前端模拟 Excel 函数工具库</p>
+        <a href="https://github.com/dxiangwiki/virtual_excel_functions" target="_blank" class="text-primary font-medium">查看源码 →</a>
+      </div>
+
+      <div class="bg-white p-6 rounded-xl shadow-sm card-hover">
+        <h3 class="font-bold text-lg mb-2 text-dark">Watcher</h3>
+        <p class="text-slate-500 mb-4">轻量级前端数据校验监听库</p>
+        <a href="https://github.com/dxiangwiki/Watcher.js" target="_blank" class="text-primary font-medium">查看源码 →</a>
+      </div>
+
+      <div class="bg-white p-6 rounded-xl shadow-sm card-hover">
+        <h3 class="font-bold text-lg mb-2 text-dark">chaos-storm</h3>
+        <p class="text-slate-500 mb-4">Canvas 粒子艺术特效项目</p>
+        <a href="https://github.com/dxiangwiki/chaos-storm" target="_blank" class="text-primary font-medium">查看源码 →</a>
+      </div>
+
+    </div>
+  </section>
+
+  <section id="contact" class="max-w-5xl mx-auto px-4 py-16 text-center">
+    <h2 class="text-2xl font-bold mb-6 text-dark">联系方式 & 平台</h2>
+    <div class="space-y-3 text-slate-600">
+      <p><i class="fa fa-github mr-2"></i> GitHub：<a href="https://github.com/dxiangwiki" target="_blank" class="text-primary">dxiangwiki</a></p>
+      <p><i class="fa fa-book mr-2"></i> CSDN：<a href="https://dxiang.blog.csdn.net" target="_blank" class="text-primary">dxiang.blog.csdn.net</a></p>
+      <p><i class="fa fa-cube mr-2"></i> Npm：<a href="https://www.npmjs.com/~dongxiang678" target="_blank" class="text-primary">dongxiang678</a></p>
+      <p><i class="fa fa-envelope mr-2"></i> 邮箱：<a href="mailto:3631247406@qq.com" class="text-primary">3631247406@qq.com</a></p>
+      <p><i class="fa fa-phone mr-2"></i> 电话：13560750185</p>
+    </div>
+  </section>
+
+  <footer class="bg-dark text-white text-center py-8">
+    <p>© 2026 董翔 | Powered by Tailwind CSS & GitHub Pages</p>
+    <p class="text-sm text-slate-400 mt-2">以代码为舟，奔赴热爱</p>
+  </footer>
+</body>
+</html>
