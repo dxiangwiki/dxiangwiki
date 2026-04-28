@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>董翔 | 软件专业开发者</title>
+  <title>董翔 | 全栈开发者 · 开源创作者 · 理论提出者 · 产业建言人</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css" />
   <script>
@@ -22,6 +22,7 @@
     @layer utilities {
       .text-shadow { text-shadow: 0 2px 4px rgba(0,0,0,0.1); }
       .card-hover { @apply transition-all duration-300 hover:shadow-lg hover:-translate-y-1; }
+      .link-underline { @apply text-primary hover:underline; }
     }
   </style>
 </head>
@@ -31,9 +32,10 @@
     <div class="max-w-5xl mx-auto px-4 py-3 flex justify-between items-center">
       <a href="#" class="text-xl font-bold text-primary">董翔</a>
       <div class="flex gap-6">
-        <a href="#about" class="hover:text-primary">关于</a>
-        <a href="#skills" class="hover:text-primary">技能</a>
-        <a href="#projects" class="hover:text-primary">项目</a>
+        <a href="#about" class="hover:text-primary">关于我</a>
+        <a href="#opensource" class="hover:text-primary">开源成果</a>
+        <a href="#innovation" class="hover:text-primary">理论创新</a>
+        <a href="#policy" class="hover:text-primary">产业建言</a>
         <a href="#contact" class="hover:text-primary">联系</a>
       </div>
     </div>
@@ -42,7 +44,7 @@
   <header class="bg-gradient-to-r from-primary to-indigo-600 text-white py-20 text-center">
     <h1 class="text-4xl md:text-5xl font-bold mb-3 text-shadow">Hi, 我是 董翔</h1>
     <p class="text-lg opacity-90 max-w-xl mx-auto px-3">
-      软件专业在读大学生 · 前端爱好者 · 开源创作者 · 技术内容分享者
+      专科全栈自学开发者｜开源创作者｜原创理论提出者｜省级产业建言人
     </p>
     <div class="mt-8 flex justify-center gap-5 text-2xl">
       <a href="https://github.com/dxiangwiki" target="_blank" class="hover:text-slate-200"><i class="fa fa-github"></i></a>
@@ -54,72 +56,139 @@
 
   <section id="about" class="max-w-5xl mx-auto px-4 py-16">
     <h2 class="text-2xl font-bold text-center mb-8 text-dark">关于我</h2>
-    <div class="bg-white p-8 rounded-xl shadow-sm">
-      <p class="mb-3 leading-relaxed">00后软件专业在读大学生，专注前端开发、工具库开发与开源分享。</p>
-      <p class="mb-3 leading-relaxed">喜欢造轮子、写Npm包、做实用工具、输出技术博客。</p>
-      <p class="leading-relaxed">持续学习，持续创作，稳步前行。</p>
+    <div class="bg-white p-8 rounded-xl shadow-sm leading-relaxed space-y-4">
+      <p>我是董翔，一名<strong>专科全栈自学开发者</strong>，拥有5年独立研发与技术沉淀经验。</p>
+      <p>全程自学深耕计算机领域，跳出固有学习框架，坚持独立思考、原创研究、长期沉淀，在工程开源、内容创作、学术理论、产业建言四大维度形成完整核心竞争力。</p>
+      <p>不因学历设限，不因环境局限，以技术立身、以原创求索、以格局致远。</p>
     </div>
   </section>
 
-  <section id="skills" class="max-w-5xl mx-auto px-4 py-16 bg-white rounded-xl">
-    <h2 class="text-2xl font-bold text-center mb-8 text-dark">技术栈</h2>
-    <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4">
-      <div class="bg-slate-100 py-3 rounded-lg text-center">HTML / CSS</div>
-      <div class="bg-slate-100 py-3 rounded-lg text-center">JavaScript</div>
-      <div class="bg-slate-100 py-3 rounded-lg text-center">Vue</div>
-      <div class="bg-slate-100 py-3 rounded-lg text-center">Tailwind CSS</div>
-      <div class="bg-slate-100 py-3 rounded-lg text-center">Java</div>
-      <div class="bg-slate-100 py-3 rounded-lg text-center">Python</div>
-      <div class="bg-slate-100 py-3 rounded-lg text-center">Git / Github</div>
-      <div class="bg-slate-100 py-3 rounded-lg text-center">Npm 包开发</div>
-    </div>
-  </section>
+  <section id="opensource" class="max-w-5xl mx-auto px-4 py-16 bg-white rounded-xl">
+    <h2 class="text-2xl font-bold text-center mb-8 text-dark">开源研发成果（13款）</h2>
+    <div class="grid md:grid-cols-2 gap-6 mt-8">
 
-  <section id="projects" class="max-w-5xl mx-auto px-4 py-16">
-    <h2 class="text-2xl font-bold text-center mb-8 text-dark">我的开源项目</h2>
-    <div class="grid md:grid-cols-2 gap-6">
-
-      <div class="bg-white p-6 rounded-xl shadow-sm card-hover">
+      <div class="bg-slate-100 p-6 rounded-xl card-hover">
         <h3 class="font-bold text-lg mb-2 text-dark">xiangjsoncraft</h3>
-        <p class="text-slate-500 mb-4">轻量级 JSON 处理工具库</p>
-        <a href="https://github.com/dxiangwiki/xiangjsoncraft" target="_blank" class="text-primary font-medium">查看源码 →</a>
+        <p class="text-slate-500">纯JSON驱动的轻量级前端框架</p>
+        <a href="https://www.npmjs.com/package/xiangjsoncraft" target="_blank" class="text-sm link-underline">NPM 查看</a>
       </div>
 
+      <div class="bg-slate-100 p-6 rounded-xl card-hover">
+        <h3 class="font-bold text-lg mb-2 text-dark">midb-manager</h3>
+        <p class="text-slate-500">轻量级数据管理系统</p>
+        <a href="https://www.npmjs.com/package/midb-manager" target="_blank" class="text-sm link-underline">NPM 查看</a>
+      </div>
+
+      <div class="bg-slate-100 p-6 rounded-xl card-hover">
+        <h3 class="font-bold text-lg mb-2 text-dark">@dongxiang678/command-system</h3>
+        <p class="text-slate-500">带权限认证的安全命令行系统</p>
+        <a href="https://www.npmjs.com/package/@dongxiang678/command-system" target="_blank" class="text-sm link-underline">NPM 查看</a>
+      </div>
+
+      <div class="bg-slate-100 p-6 rounded-xl card-hover">
+        <h3 class="font-bold text-lg mb-2 text-dark">empty-h</h3>
+        <p class="text-slate-500">C++ 通用默认值语法糖单头库</p>
+        <a href="https://www.npmjs.com/package/empty-h" target="_blank" class="text-sm link-underline">NPM 查看</a>
+      </div>
+
+      <div class="bg-slate-100 p-6 rounded-xl card-hover">
+        <h3 class="font-bold text-lg mb-2 text-dark">parampack</h3>
+        <p class="text-slate-500">C++ 参数复用与逆向绑定框架</p>
+        <a href="https://www.npmjs.com/package/parampack" target="_blank" class="text-sm link-underline">NPM 查看</a>
+      </div>
+
+      <div class="bg-slate-100 p-6 rounded-xl card-hover">
+        <h3 class="font-bold text-lg mb-2 text-dark">array_h</h3>
+        <p class="text-slate-500">C++ 优雅可变参数数组构造库</p>
+        <a href="https://www.npmjs.com/package/array_h" target="_blank" class="text-sm link-underline">NPM 查看</a>
+      </div>
+
+      <div class="bg-slate-100 p-6 rounded-xl card-hover">
+        <h3 class="font-bold text-lg mb-2 text-dark">create-xiangjsoncraft</h3>
+        <p class="text-slate-500">XiangJsonCraft 项目脚手架</p>
+        <a href="https://www.npmjs.com/package/create-xiangjsoncraft" target="_blank" class="text-sm link-underline">NPM 查看</a>
+      </div>
+
+      <div class="bg-slate-100 p-6 rounded-xl card-hover">
+        <h3 class="font-bold text-lg mb-2 text-dark">@dongxiang678/lire</h3>
+        <p class="text-slate-500">轻量、快速、简洁的前端框架</p>
+        <a href="https://www.npmjs.com/package/@dongxiang678/lire" target="_blank" class="text-sm link-underline">NPM 查看</a>
+      </div>
+
+      <div class="bg-slate-100 p-6 rounded-xl card-hover">
+        <h3 class="font-bold text-lg mb-2 text-dark">@dongxiang678/create-lire</h3>
+        <p class="text-slate-500">Lire 框架快速创建脚手架</p>
+        <a href="https://www.npmjs.com/package/@dongxiang678/create-lire" target="_blank" class="text-sm link-underline">NPM 查看</a>
+      </div>
+
+      <div class="bg-slate-100 p-6 rounded-xl card-hover">
+        <h3 class="font-bold text-lg mb-2 text-dark">@dongxiang678/typechecker</h3>
+        <p class="text-slate-500">轻量级灵活 JS 类型校验库</p>
+        <a href="https://www.npmjs.com/package/@dongxiang678/typechecker" target="_blank" class="text-sm link-underline">NPM 查看</a>
+      </div>
+
+      <div class="bg-slate-100 p-6 rounded-xl card-hover">
+        <h3 class="font-bold text-lg mb-2 text-dark">@dongxiang678/dtejs</h3>
+        <p class="text-slate-500">超轻量 TS 原生日期工具库</p>
+        <a href="https://www.npmjs.com/package/@dongxiang678/dtejs" target="_blank" class="text-sm link-underline">NPM 查看</a>
+      </div>
+
+      <div class="bg-slate-100 p-6 rounded-xl card-hover">
+        <h3 class="font-bold text-lg mb-2 text-dark">cheatt-engine-chinese</h3>
+        <p class="text-slate-500">中文引擎工具</p>
+        <a href="https://www.npmjs.com/package/cheatt-engine-chinese" target="_blank" class="text-sm link-underline">NPM 查看</a>
+      </div>
+
+      <div class="bg-slate-100 p-6 rounded-xl card-hover">
+        <h3 class="font-bold text-lg mb-2 text-dark">form-validator-cn</h3>
+        <p class="text-slate-500">中文场景零依赖表单验证库</p>
+        <a href="https://www.npmjs.com/package/form-validator-cn" target="_blank" class="text-sm link-underline">NPM 查看</a>
+      </div>
+
+    </div>
+  </section>
+
+  <section id="innovation" class="max-w-5xl mx-auto px-4 py-16">
+    <h2 class="text-2xl font-bold text-center mb-8 text-dark">原创理论与专利</h2>
+    <div class="grid md:grid-cols-2 gap-6">
       <div class="bg-white p-6 rounded-xl shadow-sm card-hover">
-        <h3 class="font-bold text-lg mb-2 text-dark">virtual_excel_functions</h3>
-        <p class="text-slate-500 mb-4">前端模拟 Excel 函数工具库</p>
-        <a href="https://github.com/dxiangwiki/virtual_excel_functions" target="_blank" class="text-primary font-medium">查看源码 →</a>
+        <h3 class="font-bold text-lg mb-2 text-dark">同源数据互补修复机制</h3>
+        <p class="text-slate-500 mb-2">百度百科收录 | 国家发明专利初审通过</p>
+        <a href="https://baike.baidu.com/item/%E5%90%8C%E6%BA%90%E6%95%B0%E6%8D%AE%E4%BA%92%E8%A1%A5%E4%BF%AE%E5%A4%8D%E4%BF%9D%E6%8A%A4%E6%9C%BA" target="_blank" class="text-sm link-underline">百科词条</a>
       </div>
-
       <div class="bg-white p-6 rounded-xl shadow-sm card-hover">
-        <h3 class="font-bold text-lg mb-2 text-dark">Watcher</h3>
-        <p class="text-slate-500 mb-4">轻量级前端数据校验监听库</p>
-        <a href="https://github.com/dxiangwiki/Watcher.js" target="_blank" class="text-primary font-medium">查看源码 →</a>
+        <h3 class="font-bold text-lg mb-2 text-dark">框架质疑学习法</h3>
+        <p class="text-slate-500 mb-2">百度百科收录 | 原创学习方法论</p>
+        <a href="https://baike.baidu.com/item/%E6%A1%86%E6%9E%B6%E8%B4%A8%E7%96%91%E5%AD%A6%E4%B9%A0%E6%B3%95" target="_blank" class="text-sm link-underline">百科词条</a>
       </div>
+    </div>
+  </section>
 
-      <div class="bg-white p-6 rounded-xl shadow-sm card-hover">
-        <h3 class="font-bold text-lg mb-2 text-dark">chaos-storm</h3>
-        <p class="text-slate-500 mb-4">Canvas 粒子艺术特效项目</p>
-        <a href="https://github.com/dxiangwiki/chaos-storm" target="_blank" class="text-primary font-medium">查看源码 →</a>
-      </div>
-
+  <section id="policy" class="max-w-5xl mx-auto px-4 py-16 bg-white rounded-xl">
+    <h2 class="text-2xl font-bold text-center mb-8 text-dark">产业建言与官方认可</h2>
+    <div class="p-6 bg-primary/5 border border-primary/20 rounded-xl text-center">
+      <p class="font-bold text-dark mb-2">广东省软件产业发展专项建议</p>
+      <p class="text-slate-600 mb-1">✅ 经省市多级政务部门流转审议</p>
+      <p class="text-slate-600 mb-1">✅ 广东省工信厅全量采纳并上报省委</p>
+      <p class="text-slate-600 mb-1">✅ 纳入<strong>广东省十五五规划</strong>编制参考</p>
+      <p class="text-slate-600">✅ 获省级<strong>红头文件告知书 + 官方感谢信</strong></p>
     </div>
   </section>
 
   <section id="contact" class="max-w-5xl mx-auto px-4 py-16 text-center">
-    <h2 class="text-2xl font-bold mb-6 text-dark">联系方式 & 平台</h2>
+    <h2 class="text-2xl font-bold text-center mb-6 text-dark">联系方式 & 平台</h2>
     <div class="space-y-3 text-slate-600">
-      <p><i class="fa fa-github mr-2"></i> GitHub：<a href="https://github.com/dxiangwiki" target="_blank" class="text-primary">dxiangwiki</a></p>
-      <p><i class="fa fa-book mr-2"></i> CSDN：<a href="https://dxiang.blog.csdn.net" target="_blank" class="text-primary">dxiang.blog.csdn.net</a></p>
-      <p><i class="fa fa-cube mr-2"></i> Npm：<a href="https://www.npmjs.com/~dongxiang678" target="_blank" class="text-primary">dongxiang678</a></p>
-      <p><i class="fa fa-envelope mr-2"></i> 邮箱：<a href="mailto:3631247406@qq.com" class="text-primary">3631247406@qq.com</a></p>
+      <p><i class="fa fa-github mr-2"></i> GitHub：<a href="https://github.com/dxiangwiki" target="_blank" class="text-primary link-underline">dxiangwiki</a></p>
+      <p><i class="fa fa-book mr-2"></i> CSDN：<a href="https://dxiang.blog.csdn.net" target="_blank" class="text-primary link-underline">dxiang.blog.csdn.net</a></p>
+      <p><i class="fa fa-cube mr-2"></i> Npm：<a href="https://www.npmjs.com/~dongxiang678" target="_blank" class="text-primary link-underline">dongxiang678</a></p>
+      <p><i class="fa fa-envelope mr-2"></i> 邮箱：<a href="mailto:3631247406@qq.com" class="text-primary link-underline">3631247406@qq.com</a></p>
       <p><i class="fa fa-phone mr-2"></i> 电话：13560750185</p>
     </div>
   </section>
 
   <footer class="bg-dark text-white text-center py-8">
-    <p>© 2026 董翔 | Powered by Tailwind CSS & GitHub Pages</p>
-    <p class="text-sm text-slate-400 mt-2">以代码为舟，奔赴热爱</p>
+    <p>© 2026 董翔 | 专科自学破局 · 原创创造价值</p>
+    <p class="text-sm text-slate-400 mt-2">开源 · 原创 · 深耕 · 致远</p>
   </footer>
 </body>
 </html>
