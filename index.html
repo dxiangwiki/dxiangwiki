@@ -4,124 +4,378 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>董翔 | 全栈开发者 · 开源创作者 · 理论提出者 · 产业建言人</title>
-  <link rel="icon" type="image/x-icon" href="favicon.ico">
-  <script src="https://cdn.tailwindcss.com"></script>
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css" />
-  <script>
-    tailwind.config = {
-      theme: {
-        extend: {
-          colors: {
-            primary: '#165DFF',
-            dark: '#1E293B'
-          }
-        }
+  <link rel="stylesheet" href="https://cdn.bootcdn.net/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    html {
+      scroll-behavior: smooth;
+    }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+      background-color: #f8fafc;
+      color: #334155;
+      line-height: 1.6;
+    }
+    a {
+      color: #165DFF;
+      text-decoration: none;
+    }
+    a:hover {
+      text-decoration: underline;
+      text-underline-offset: 4px;
+    }
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+    section {
+      scroll-margin-top: 72px;
+      padding: 80px 0;
+    }
+    .section-title {
+      font-size: 32px;
+      font-weight: 700;
+      text-align: center;
+      color: #0F172A;
+      margin-bottom: 40px;
+    }
+
+    /* 导航栏 */
+    nav {
+      position: sticky;
+      top: 0;
+      background: rgba(255,255,255,0.9);
+      backdrop-filter: blur(10px);
+      box-shadow: 0 1px 4px rgba(0,0,0,0.06);
+      z-index: 50;
+    }
+    .nav-wrap {
+      height: 72px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .logo-link {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .logo-link img {
+      height: 32px;
+      width: auto;
+    }
+    .nav-desktop {
+      display: flex;
+      gap: 4px;
+    }
+    .nav-desktop a {
+      padding: 4px 8px;
+      color: #475569;
+      transition: color 0.2s;
+    }
+    .nav-desktop a:hover {
+      color: #165DFF;
+      text-decoration: none;
+    }
+    .menu-btn {
+      display: none;
+      border: none;
+      background: transparent;
+      font-size: 20px;
+      color: #334155;
+      cursor: pointer;
+    }
+    .mobile-menu {
+      display: none;
+      border-top: 1px solid #e2e8f0;
+      padding: 16px 24px;
+      flex-direction: column;
+      gap: 12px;
+      background: #fff;
+    }
+    .mobile-menu a {
+      color: #475569;
+      padding: 4px 8px;
+    }
+    .mobile-menu a:hover {
+      color: #165DFF;
+      text-decoration: none;
+    }
+
+    /* Hero首屏 */
+    .hero {
+      background: linear-gradient(90deg, #165DFF, #3b82f6);
+      color: #fff;
+      padding: 96px 0;
+      text-align: center;
+    }
+    .hero h1 {
+      font-size: 56px;
+      font-weight: 700;
+      margin-bottom: 20px;
+      text-shadow: 0 2px 8px rgba(0,0,0,0.15);
+    }
+    .hero p {
+      font-size: 20px;
+      max-width: 720px;
+      margin: 0 auto;
+      opacity: 0.95;
+    }
+    .social-group {
+      margin-top: 40px;
+      display: flex;
+      justify-content: center;
+      gap: 24px;
+      font-size: 32px;
+    }
+    .social-group a {
+      color: white;
+      transition: color 0.2s;
+    }
+    .social-group a:hover {
+      color: #cbd5e1;
+      text-decoration: none;
+    }
+
+    /* 关于我卡片 */
+    .about-card {
+      background: #fff;
+      padding: 40px;
+      border-radius: 16px;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+      font-size: 18px;
+    }
+    .about-card p {
+      margin-bottom: 16px;
+    }
+
+    /* 卡片网格 */
+    .card-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
+    .card-item {
+      background: #fff;
+      padding: 24px;
+      border-radius: 12px;
+      border:1px solid #f1f5f9;
+      transition: all 0.3s ease;
+    }
+    .card-item:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1);
+      border-color: rgba(22,93,255,0.4);
+    }
+    .card-item h3 {
+      font-size: 18px;
+      font-weight: 700;
+      color: #0F172A;
+      margin-bottom: 8px;
+    }
+    .card-item p {
+      color:#64748b;
+      margin-bottom:16px;
+    }
+
+    /* 产业建言板块 */
+    .policy-box {
+      background-color: rgba(22, 93, 255, 0.05);
+      border:1px solid rgba(22, 93, 255, 0.2);
+      border-radius:16px;
+      padding:32px;
+      text-align:center;
+    }
+    .policy-box h3 {
+      font-size:22px;
+      color:#0F172A;
+      margin-bottom:16px;
+    }
+    .policy-box p {
+      font-size:18px;
+      color:#475569;
+      margin:8px 0;
+    }
+
+    /* 联系板块 */
+    .contact-area {
+      text-align:center;
+      font-size:18px;
+    }
+    .contact-area p {
+      margin:12px 0;
+    }
+    .contact-area i {
+      color:#165DFF;
+      margin-right:8px;
+    }
+
+    /* 页脚 */
+    footer {
+      background-color:#0F172A;
+      color:#fff;
+      text-align:center;
+      padding:40px 0;
+    }
+    footer p.sub {
+      color:#94a3b8;
+      margin-top:12px;
+    }
+
+    /* 响应式适配 */
+    @media(max-width:992px){
+      .card-grid {
+        grid-template-columns: repeat(2,1fr);
       }
     }
-  </script>
-  <style type="text/tailwindcss">
-    @layer utilities {
-      .text-shadow { text-shadow: 0 2px 4px rgba(0,0,0,0.1); }
-      .card-hover { @apply transition-all duration-300 hover:shadow-lg hover:-translate-y-1; }
-      .link-underline { @apply text-primary hover:underline; }
+    @media(max-width:768px){
+      .nav-desktop {
+        display:none;
+      }
+      .menu-btn {
+        display:block;
+      }
+      .card-grid {
+        grid-template-columns: 1fr;
+      }
+      .hero h1 {
+        font-size:40px;
+      }
     }
   </style>
 </head>
-<body class="bg-slate-50 text-slate-700">
-  <nav class="sticky top-0 bg-white/90 backdrop-blur shadow-sm z-10">
-    <div class="max-w-5xl mx-auto px-4 py-3 flex justify-between items-center">
-      <a href="#" class="flex items-center gap-2">
-        <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 120 40'%3E%3Crect x='0' y='4' width='32' height='32' rx='8' fill='%23165DFF'/%3E%3Ctext x='16' y='27' font-size='20' text-anchor='middle' fill='white' font-family='Arial, sans-serif' font-weight='bold'%3EDX%3C/text%3E%3Ctext x='42' y='27' font-size='20' fill='%23165DFF' font-family='Arial, sans-serif' font-weight='bold'%3E董翔%3C/text%3E%3C/svg%3E" alt="董翔 Logo" class="h-8 w-auto">
+<body>
+  <!-- 导航栏 -->
+  <nav>
+    <div class="container nav-wrap">
+      <a href="#" class="logo-link">
+        <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 120 40'%3E%3Crect x='0' y='4' width='32' height='32' rx='8' fill='%23165DFF'/%3E%3Ctext x='16' y='27' font-size='20' text-anchor='middle' fill='white' font-family='Arial, sans-serif' font-weight='bold'%3EDX%3C/text%3E%3Ctext x='42' y='27' font-size='20' fill='%23165DFF' font-family='Arial, sans-serif' font-weight='bold'%3E董翔%3C/text%3E%3C/svg%3E" alt="董翔 Logo">
       </a>
-      <div class="flex gap-6">
-        <a href="#about" class="hover:text-primary">关于我</a>
-        <a href="#opensource" class="hover:text-primary">开源成果</a>
-        <a href="#experiment" class="hover:text-primary">实验项目</a>
-        <a href="#innovation" class="hover:text-primary">理论创新</a>
-        <a href="#policy" class="hover:text-primary">产业建言</a>
-        <a href="#contact" class="hover:text-primary">联系</a>
+      <div class="nav-desktop">
+        <a href="#about">关于我</a>
+        <a href="#opensource">开源成果</a>
+        <a href="#experiment">实验项目</a>
+        <a href="#innovation">理论创新</a>
+        <a href="#policy">产业建言</a>
+        <a href="#contact">联系</a>
       </div>
+      <button class="menu-btn" id="menuBtn"><i class="fa fa-bars"></i></button>
+    </div>
+    <div class="mobile-menu container" id="mobileMenu">
+      <a href="#about">关于我</a>
+      <a href="#opensource">开源成果</a>
+      <a href="#experiment">实验项目</a>
+      <a href="#innovation">理论创新</a>
+      <a href="#policy">产业建言</a>
+      <a href="#contact">联系</a>
     </div>
   </nav>
-  <header class="bg-gradient-to-r from-primary to-indigo-600 text-white py-20 text-center">
-    <h1 class="text-4xl md:text-5xl font-bold mb-3 text-shadow">Hi, 我是 董翔</h1>
-    <p class="text-lg opacity-90 max-w-xl mx-auto px-3">
-      专科全栈自学开发者｜开源创作者｜原创理论提出者｜省级产业建言人
-    </p>
-    <div class="mt-8 flex justify-center gap-5 text-2xl">
-      <a href="https://github.com/dxiangwiki" target="_blank" class="hover:text-slate-200"><i class="fa fa-github"></i></a>
-      <a href="https://dxiang.blog.csdn.net" target="_blank" class="hover:text-slate-200"><i class="fa fa-book"></i></a>
-      <a href="https://www.npmjs.com/~dongxiang678" target="_blank" class="hover:text-slate-200"><i class="fa fa-cube"></i></a>
-      <a href="mailto:3631247406@qq.com" class="hover:text-slate-200"><i class="fa fa-envelope"></i></a>
+
+  <!-- Hero首屏 -->
+  <header class="hero">
+    <div class="container">
+      <h1>Hi, 我是 董翔</h1>
+      <p>专科全栈自学开发者｜开源创作者｜原创理论提出者｜省级产业建言人</p>
+      <div class="social-group">
+        <a href="https://github.com/dxiangwiki" target="_blank"><i class="fa fa-github"></i></a>
+        <a href="https://dxiang.blog.csdn.net" target="_blank"><i class="fa fa-book"></i></a>
+        <a href="https://www.npmjs.com/~dongxiang678" target="_blank"><i class="fa fa-cube"></i></a>
+        <a href="mailto:3631247406@qq.com"><i class="fa fa-envelope"></i></a>
+      </div>
     </div>
   </header>
 
-  <section id="about" class="max-w-5xl mx-auto px-4 py-16">
-    <h2 class="text-2xl font-bold text-center mb-8 text-dark">关于我</h2>
-    <div class="bg-white p-8 rounded-xl shadow-sm leading-relaxed space-y-4">
-      <p>我是董翔，一名<strong>专科全栈自学开发者</strong>，拥有5年独立研发与技术沉淀经验。</p>
-      <p>全程自学深耕计算机领域，跳出固有学习框架，坚持独立思考、原创研究、长期沉淀，在工程开源、内容创作、学术理论、产业建言四大维度形成完整核心竞争力。</p>
-      <p>不因学历设限，不因环境局限，以技术立身、以原创求索、以格局致远。</p>
+  <!-- 关于我 -->
+  <section id="about">
+    <div class="container">
+      <h2 class="section-title">关于我</h2>
+      <div class="about-card">
+        <p>我是董翔，一名<strong>专科全栈自学开发者</strong>，拥有5年独立研发与技术沉淀经验。</p>
+        <p>全程自学深耕计算机领域，跳出固有学习框架，坚持独立思考、原创研究、长期沉淀，在工程开源、内容创作、学术理论、产业建言四大维度形成完整核心竞争力。</p>
+        <p>不因学历设限，不因环境局限，以技术立身、以原创求索、以格局致远。</p>
+      </div>
     </div>
   </section>
 
-  <!-- 开源成果 容器（卡片由JSON渲染） -->
-  <section id="opensource" class="max-w-5xl mx-auto px-4 py-16 bg-white rounded-xl">
-    <h2 class="text-2xl font-bold text-center mb-8 text-dark">开源研发成果（13款）</h2>
-    <div id="opensource-list" class="grid md:grid-cols-2 gap-6 mt-8">
-      <!-- JS自动填充卡片 -->
+  <!-- 开源成果 -->
+  <section id="opensource">
+    <div class="container">
+      <h2 class="section-title">开源研发成果（13款）</h2>
+      <p style="text-align:center; color:#64748b; margin-bottom:32px;">全部发布于 NPM，可直接安装使用</p>
+      <div class="card-grid" id="opensource-list"></div>
     </div>
   </section>
 
-  <!-- 实验项目 容器 -->
-  <section id="experiment" class="max-w-5xl mx-auto px-4 py-16">
-    <h2 class="text-2xl font-bold text-center mb-3 text-dark">🧪 自主研究 · 实验项目</h2>
-    <p class="text-center text-slate-500 mb-8">本板块存放个人自主研究探索项目，用于验证技术构想，未发布NPM包，全部源码托管于GitHub，均非课程作业。</p>
-    <div id="experiment-list" class="grid md:grid-cols-2 gap-6 mt-8">
-      <!-- JS自动填充卡片 -->
-    </div>
-    <div class="text-center mt-10 text-slate-500">
-      <p>更多持续迭代的研究原型、实验代码，欢迎前往我的 GitHub 主页浏览完整仓库列表。</p>
-      <a href="https://github.com/dxiangwiki" target="_blank" class="link-underline">github.com/dxiangwiki</a>
-    </div>
-  </section>
-
-  <!-- 原创理论与专利 容器 -->
-  <section id="innovation" class="max-w-5xl mx-auto px-4 py-16">
-    <h2 class="text-2xl font-bold text-center mb-8 text-dark">原创理论与专利</h2>
-    <div id="innovation-list" class="grid md:grid-cols-2 gap-6">
-      <!-- JS自动填充卡片 -->
+  <!-- 实验项目 -->
+  <section id="experiment" style="background:#fff;">
+    <div class="container">
+      <h2 class="section-title">🧪 自主研究 · 实验项目</h2>
+      <p style="text-align:center; color:#64748b; margin-bottom:32px;">本板块存放个人自主研究探索项目，用于验证技术构想，未发布NPM包，全部源码托管于GitHub，均非课程作业。</p>
+      <div class="card-grid" id="experiment-list"></div>
+      <div style="text-align:center; margin-top:48px; color:#64748b;">
+        <p>更多持续迭代的研究原型、实验代码，欢迎前往我的 GitHub 主页浏览完整仓库列表。</p>
+        <a href="https://github.com/dxiangwiki" target="_blank">github.com/dxiangwiki</a>
+      </div>
     </div>
   </section>
 
-  <section id="policy" class="max-w-5xl mx-auto px-4 py-16 bg-white rounded-xl">
-    <h2 class="text-2xl font-bold text-center mb-8 text-dark">产业建言与官方认可</h2>
-    <div class="p-6 bg-primary/5 border border-primary/20 rounded-xl text-center">
-      <p class="font-bold text-dark mb-2">广东省软件产业发展专项建议</p>
-      <p class="text-slate-600 mb-1">✅ 经省市多级政务部门流转审议</p>
-      <p class="text-slate-600 mb-1">✅ 广东省工信厅全量采纳并上报省委</p>
-      <p class="text-slate-600 mb-1">✅ 纳入<strong>广东省十五五规划</strong>编制参考</p>
-      <p class="text-slate-600">✅ 获省级<strong>红头文件告知书 + 官方感谢信</strong></p>
+  <!-- 原创理论 -->
+  <section id="innovation">
+    <div class="container">
+      <h2 class="section-title">原创理论与专利</h2>
+      <div class="card-grid" id="innovation-list"></div>
     </div>
   </section>
 
-  <section id="contact" class="max-w-5xl mx-auto px-4 py-16 text-center">
-    <h2 class="text-2xl font-bold text-center mb-6 text-dark">联系方式 & 平台</h2>
-    <div class="space-y-3 text-slate-600">
-      <p><i class="fa fa-github mr-2"></i> GitHub：<a href="https://github.com/dxiangwiki" target="_blank" class="text-primary link-underline">dxiangwiki</a></p>
-      <p><i class="fa fa-book mr-2"></i> CSDN：<a href="https://dxiang.blog.csdn.net" target="_blank" class="text-primary link-underline">dxiang.blog.csdn.net</a></p>
-      <p><i class="fa fa-cube mr-2"></i> Npm：<a href="https://www.npmjs.com/~dongxiang678" target="_blank" class="text-primary link-underline">dongxiang678</a></p>
-      <p><i class="fa fa-envelope mr-2"></i> 邮箱：<a href="mailto:3631247406@qq.com" class="text-primary link-underline">3631247406@qq.com</a></p>
+  <!-- 产业建言 -->
+  <section id="policy">
+    <div class="container">
+      <h2 class="section-title">产业建言与官方认可</h2>
+      <div class="policy-box">
+        <h3>广东省软件产业发展专项建议</h3>
+        <p>✅ 经省市多级政务部门流转审议</p>
+        <p>✅ 广东省工信厅全量采纳并上报省委</p>
+        <p>✅ 纳入<strong>广东省十五五规划</strong>编制参考</p>
+        <p>✅ 获省级<strong>红头文件告知书 + 官方感谢信</strong></p>
+      </div>
     </div>
   </section>
 
-  <footer class="bg-dark text-white text-center py-8">
-    <p>© 2026 董翔 | 专科自学破局 · 原创创造价值</p>
-    <p class="text-sm text-slate-400 mt-2">开源 · 原创 · 深耕 · 致远</p>
+  <!-- 联系 -->
+  <section id="contact">
+    <div class="container contact-area">
+      <h2 class="section-title">联系方式 & 平台</h2>
+      <p><i class="fa fa-github"></i> GitHub：<a href="https://github.com/dxiangwiki" target="_blank">dxiangwiki</a></p>
+      <p><i class="fa fa-book"></i> CSDN：<a href="https://dxiang.blog.csdn.net" target="_blank">dxiang.blog.csdn.net</a></p>
+      <p><i class="fa fa-cube"></i> Npm：<a href="https://www.npmjs.com/~dongxiang678" target="_blank">dongxiang678</a></p>
+      <p><i class="fa fa-envelope"></i> 邮箱：<a href="mailto:3631247406@qq.com">3631247406@qq.com</a></p>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">
+      <p style="font-size:20px;">© 2026 董翔 | 专科自学破局 · 原创创造价值</p>
+      <p class="sub">开源 · 原创 · 深耕 · 致远</p>
+    </div>
   </footer>
 
 <script>
-// ========== 全部配置写在这里，新增项目只需要修改JSON ==========
+// 移动端菜单
+const menuBtn = document.getElementById('menuBtn');
+const mobileMenu = document.getElementById('mobileMenu');
+menuBtn.addEventListener('click', ()=>{
+  mobileMenu.style.display = mobileMenu.style.display === 'flex' ? 'none' : 'flex';
+})
+mobileMenu.querySelectorAll('a').forEach(link=>{
+  link.onclick = ()=> mobileMenu.style.display = "none";
+})
+
+//项目数据
 const pageConfig = {
   opensource: [
     {name:"xiangjsoncraft",desc:"纯JSON驱动的轻量级前端框架",link:"https://www.npmjs.com/package/xiangjsoncraft",linkText:"NPM 查看"},
@@ -159,26 +413,34 @@ const pageConfig = {
   ]
 };
 
-// 通用卡片渲染函数（统一模板！）
-function renderCardList(containerId, list, cardBgClass="bg-slate-100"){
+function escapeHtml(str){
+  if(!str) return '';
+  return str.replace(/[&<>"']/g, m => ({
+    '&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#039;'
+  })[m]);
+}
+
+function renderCardList(containerId, list){
   const container = document.getElementById(containerId);
+  if(!container) return;
   let html = "";
   list.forEach(item=>{
     html += `
-    <div class="${cardBgClass} p-6 rounded-xl card-hover">
-      <h3 class="font-bold text-lg mb-2 text-dark">${item.name}</h3>
-      <p class="text-slate-500">${item.desc}</p>
-      <a href="${item.link}" target="_blank" class="text-sm link-underline">${item.linkText}</a>
+    <div class="card-item">
+      <h3>${escapeHtml(item.name)}</h3>
+      <p>${escapeHtml(item.desc)}</p>
+      <a href="${escapeHtml(item.link)}" target="_blank">${escapeHtml(item.linkText)}</a>
     </div>
     `
   })
   container.innerHTML = html;
 }
 
-// 渲染三个板块
-renderCardList("opensource-list", pageConfig.opensource, "bg-slate-100");
-renderCardList("experiment-list", pageConfig.experiment, "bg-slate-100");
-renderCardList("innovation-list", pageConfig.innovation, "bg-white");
+document.addEventListener('DOMContentLoaded', function(){
+  renderCardList("opensource-list", pageConfig.opensource);
+  renderCardList("experiment-list", pageConfig.experiment);
+  renderCardList("innovation-list", pageConfig.innovation);
+});
 </script>
 </body>
 </html>
